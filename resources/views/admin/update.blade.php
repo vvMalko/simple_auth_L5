@@ -56,7 +56,7 @@
                             <label for="Role" class="col-md-4 control-label">Role</label>
 
                             <div class="col-md-6">
-                                <select class="form-control">
+                                <select class="form-control" name="status">
                                 <option value="0">User</option>
                                 <option value="100" @if($user->status == 100) selected @endif>Admin</option>
                                 </select>

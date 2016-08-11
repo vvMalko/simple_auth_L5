@@ -47,7 +47,7 @@ class AdminController extends Controller
 
     /**
     * Update User
-    * 
+    *
     * @param  $data
     */
     public function update(Request $data)
@@ -58,12 +58,12 @@ class AdminController extends Controller
 
     /**
     * Edit User data
-    * 
+    *
     * @param  $data
     */
     public function edit(Request $data)
     {
-        
+
         $v = Validator::make($data->all(), [
             'name' => 'required|max:255',
             'email' => 'required',
@@ -73,21 +73,22 @@ class AdminController extends Controller
         {
             return redirect()->back()->withErrors($v->errors());
         }
-        
+
         $user = User::find($data->user_id);
         $user->name = $data->name;
         $user->email = $data->email;
+        $user->status = $data->status;
         if($data->password)
         {
-            $user->email = bcrypt($data->password); 
+            $user->email = bcrypt($data->password);
         }
         $user->save();
         return redirect('admin');
     }
 
     /**
-    * Delete User 
-    * 
+    * Delete User
+    *
     * @param  $data
     */
     public function delete(Request $data)
