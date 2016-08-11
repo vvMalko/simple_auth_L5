@@ -3,9 +3,10 @@
 ##Install
 
 
-1) ```json $ git clone git://github.com/vvMalko/simple_auth_L5.git new_project ```
+1) ``` $ git clone git://github.com/vvMalko/simple_auth_L5.git new_project ```
 
-2) ```json  $ composer install```
+2) ```  $ composer install```
+
 3) Edit .env file
 
 
